@@ -1,0 +1,42 @@
+.navbar {
+  width: 300px;
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.number {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+  font-weight: 600;
+}
+.number.active {
+  background-color: hsl(206, 94%, 87%);
+  color: black;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.title {
+  color: hsl(231, 11%, 63%);
+}
+.desc {
+  color: white;
+  font-weight: 700;
+}

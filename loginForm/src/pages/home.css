@@ -87,15 +87,15 @@ button:hover {
 }
 @media only screen and (max-width: 375px) {
   .home {
-    width: 100vw;
+    width: 90%;
     height: 100vh;
     background-color: white;
   }
 
   .loginForm {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
+    width: 90%;
+    padding: 20px;
+    gap: 20px;
   }
 
   .right img {

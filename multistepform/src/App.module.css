@@ -1,0 +1,21 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(217, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  display: flex;
+  gap: 30px;
+  padding: 20px 20px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px 5px gainsboro;
+}
+a {
+  text-decoration: none;
+}

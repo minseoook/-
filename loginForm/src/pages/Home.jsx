@@ -34,7 +34,7 @@ const Home = () => {
       ) : (
         <div className="loginForm">
           <div className="left">
-            <h1>이메일 검증 폼</h1>
+            <h1>이메일 검증 폼</h1>ㅋ
             <p>내가 만든 이메일 검증 폼 성공 메시지도 나오고 에러도 체크</p>
             <div className="check">
               <img src={imgicon} />
@@ -52,7 +52,6 @@ const Home = () => {
               <h4>이메일 입력</h4>
               {error && <h4 className="error">{errorMsg}</h4>}
             </div>
-
             <form onSubmit={handleSubmit}>
               <input
                 className={error && "errors"}

@@ -1,0 +1,48 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 65px;
+}
+.container h1 {
+}
+.container p {
+  color: hsl(231, 11%, 63%);
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.errormsg {
+  display: flex;
+  justify-content: space-between;
+}
+.errormsg span {
+  color: red;
+}
+.inputs input {
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+.error {
+  border: 1px solid red;
+}
+.inputs input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+.button button {
+  width: 150px;
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  height: 50px;
+  border-radius: 15px;
+  margin-top: 45px;
+}
