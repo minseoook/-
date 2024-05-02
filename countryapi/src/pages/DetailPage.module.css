@@ -1,0 +1,64 @@
+.container {
+  width: 1400px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.button {
+  border: 1px solid gainsboro;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button span {
+  padding-left: 15px;
+}
+.country {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+.country img {
+  width: 600px;
+}
+.desc {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bottom {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+.aaa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.abs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: auto;
+  background-color: gainsboro;
+  padding: 15px 15px;
+  border-radius: 15px;
+}
