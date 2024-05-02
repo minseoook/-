@@ -5,6 +5,7 @@ import Second from "./pages/Second";
 import Third from "./pages/Third";
 import Fourth from "./pages/Fourth";
 import style from "./App.module.css";
+import Main from "./pages/Main";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/2" element={<Second />} />
           <Route path="/3" element={<Third />} />
           <Route path="/4" element={<Fourth />} />
+          <Route path="/main" element={<Main />} />
         </Routes>
       </div>
     </div>

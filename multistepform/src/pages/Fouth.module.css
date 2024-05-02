@@ -1,0 +1,61 @@
+.container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.lists {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(217, 100%, 97%);
+  padding: 20px 20px;
+  border-radius: 15px;
+  color: black;
+  font-size: 16px;
+  gap: 10px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total {
+  margin-top: 15px;
+  width: 450px;
+  background-color: hsl(217, 100%, 97%);
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+.price {
+  color: hsl(243, 100%, 62%);
+  font-weight: 800;
+}
+.change {
+  color: hsl(243, 100%, 62%);
+  font-weight: 800;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.prev {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  color: hsl(213, 96%, 18%);
+  background-color: white;
+  border: none;
+  font-weight: 1000;
+  font-size: 16px;
+}
+.next {
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  font-size: 16px;
+}
