@@ -1,4 +1,5 @@
 import "./index.css";
+
 const Pagination = ({ total, currentPage, setCurrentPage }) => {
   function generateNoOfPages(total) {
     const pages = [];

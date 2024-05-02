@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import Country from "../components/Country";
 import { useState } from "react";
 import { useEffect } from "react";
-import Pagination from "../components/pagination";
+import Pagination from "../components/Pagination";
 
 const MainPage = () => {
   const [country, setCountry] = useState(data);
@@ -23,8 +23,10 @@ const MainPage = () => {
     }
   };
   const filtercountry = (filter) => {
-    console.log(filter);
-    console.log(country.filter((a) => a.region === filter));
+    if (filter === "All") {
+      setCountry(data);
+      return;
+    }
     setCountry(data.filter((a) => a.region === filter));
   };
   useEffect(() => {
@@ -64,7 +66,7 @@ const MainPage = () => {
           className={style.select}
           onChange={(e) => setFilter(e.target.value)}
         >
-          <option value="">대륙을 선택하시오</option>
+          <option value="All">대륙을 선택하시오</option>
           <option value="Africa">Africa</option>
           <option value="Americas">Americas</option>
           <option value="Asia">Asia</option>
