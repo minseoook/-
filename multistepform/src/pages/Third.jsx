@@ -1,14 +1,58 @@
 import { useNavigate } from "react-router-dom";
 import style from "./Third.module.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart2 } from "../store/slice/cartSlice";
 const Third = () => {
-  const [selected, setselected] = useState("");
+  const { cart } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [selected, setselected] = useState(cart);
   const navigate = useNavigate();
+
+  console.log(selected);
   const handlePrev = () => {
     navigate("/2");
   };
   const handleNext = () => {
+    dispatch(addToCart2(selected));
     navigate("/4");
+  };
+  const handleChange1 = (e) => {
+    const checked = e.target.checked; //true / false
+    const name = e.target.name;
+
+    if (checked) {
+      setselected([...selected, { [name]: 1 }]);
+    } else {
+      const arr = selected.filter((a) => a["온라인서비스2"] !== 1);
+
+      setselected(arr);
+    }
+  };
+
+  const handleChange2 = (e) => {
+    const checked = e.target.checked; //true / false
+    const name = e.target.name;
+
+    if (checked) {
+      setselected([...selected, { [name]: 2 }]);
+    } else {
+      const arr = selected.filter((a) => a["온라인서비스3"] !== 2);
+
+      setselected(arr);
+    }
+  };
+  const handleChange3 = (e) => {
+    const checked = e.target.checked; //true / false
+    const name = e.target.name;
+
+    if (checked) {
+      setselected([...selected, { [name]: 4 }]);
+    } else {
+      const arr = selected.filter((a) => a["온라인서비스4"] !== 4);
+
+      setselected(arr);
+    }
   };
   return (
     <div className={style.container}>
@@ -18,7 +62,14 @@ const Third = () => {
         <div className={style.services}>
           <div className={style.service}>
             <div className={style.check}>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onChange={handleChange1}
+                checked={
+                  selected.filter((a) => a["온라인서비스2"] === 1).length === 1
+                }
+                name="온라인서비스2"
+              />
               <div className={style.desc}>
                 <span>온라인 서비스2</span>
                 <span>온라인 서비스2를 이용해 보세요</span>
@@ -29,7 +80,14 @@ const Third = () => {
 
           <div className={style.service}>
             <div className={style.check}>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onChange={handleChange2}
+                checked={
+                  selected.filter((a) => a["온라인서비스3"] === 2).length === 1
+                }
+                name="온라인서비스3"
+              />
               <div className={style.desc}>
                 <span>온라인 서비스3</span>
                 <span>온라인 서비스3를 이용해 보세요</span>
@@ -40,7 +98,14 @@ const Third = () => {
 
           <div className={style.service}>
             <div className={style.check}>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onChange={handleChange3}
+                checked={
+                  selected.filter((a) => a["온라인서비스4"] === 4).length === 1
+                }
+                name="온라인서비스4"
+              />
               <div className={style.desc}>
                 <span>온라인 서비스4</span>
                 <span>온라인 서비스4를 이용해 보세요</span>

@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import style from "./First.module.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../store/slice/userSlice";
 
 const First = () => {
-  const [users, setusers] = useState({});
+  const { user } = useSelector((state) => state);
+  const [users, setusers] = useState(user);
   const [error, seterror] = useState({});
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setusers({ ...users, [e.target.name]: e.target.value });
@@ -24,6 +28,8 @@ const First = () => {
       seterror({ number: "전화번호를 입력해주세요" });
       return;
     }
+    dispatch(addUser(users));
+
     navigate("/2");
   };
 
@@ -34,6 +40,7 @@ const First = () => {
       <div className={style.inputs}>
         <label>이름</label>
         <input
+          value={users.name}
           name="name"
           type="text"
           placeholder="이름을 입력해주세요"
@@ -46,6 +53,7 @@ const First = () => {
           {error.email && <span>{error.email}</span>}
         </div>
         <input
+          value={users.email}
           className={error.email && style.error}
           name="email"
           type="text"
@@ -60,6 +68,7 @@ const First = () => {
         </div>
 
         <input
+          value={users.number}
           className={error.number && style.error}
           name="number"
           type="text"
