@@ -4,15 +4,21 @@ import { IoIosSearch } from "react-icons/io";
 import Country from "../components/Country";
 import { useState } from "react";
 import { useEffect } from "react";
+import Pagination from "../components/Pagination";
+
 const MainPage = () => {
   const [country, setCountry] = useState(data);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const pages = Math.floor(country.length / 8) + 1;
 
+  let last = currentPage * 8;
+  let first = last - 8;
   const searchFilter = (search) => {
     if (search) {
       setCountry(
-        country.filter((a) => a.name.toLowerCase() === search.toLowerCase())
+        data.filter((a) => a.name.toLowerCase() === search.toLowerCase())
       );
     }
   };
@@ -67,7 +73,7 @@ const MainPage = () => {
         </select>
       </div>
       <div className={style.countrys}>
-        {country.map((a, i) => (
+        {country.slice(first, last).map((a, i) => (
           <Country
             key={i}
             id={a.id}
@@ -79,6 +85,11 @@ const MainPage = () => {
           />
         ))}
       </div>
+      <Pagination
+        total={pages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
