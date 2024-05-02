@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import Country from "../components/Country";
 import { useState } from "react";
 import { useEffect } from "react";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/pagination";
 
 const MainPage = () => {
   const [country, setCountry] = useState(data);
