@@ -1,3 +1,7 @@
+.main {
+  background-color: var(--background);
+  color: var(--color);
+}
 .container {
   width: 1400px;
   margin: 0 auto;
@@ -18,6 +22,8 @@
   display: flex;
   align-items: center;
   padding-left: 30px;
+  background-color: var(--background);
+  color: var(--color);
 }
 .input input {
   width: 100%;
@@ -26,6 +32,8 @@
   outline: none;
   padding-left: 20px;
   font-size: 20px;
+  background-color: var(--background);
+  color: var(--color);
 }
 .select {
   width: 150px;
@@ -36,6 +44,8 @@
   align-items: center;
   padding-left: 10px;
   outline: none;
+  background-color: var(--background);
+  color: var(--color);
 }
 .countrys {
   width: 1400px;

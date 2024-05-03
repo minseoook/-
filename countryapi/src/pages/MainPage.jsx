@@ -20,14 +20,17 @@ const MainPage = () => {
       setCountry(
         data.filter((a) => a.name.toLowerCase() === search.toLowerCase())
       );
+      setCurrentPage(1);
     }
   };
   const filtercountry = (filter) => {
     if (filter === "All") {
       setCountry(data);
+      setCurrentPage(1);
       return;
     }
     setCountry(data.filter((a) => a.region === filter));
+    setCurrentPage(1);
   };
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -49,49 +52,51 @@ const MainPage = () => {
     }
   }, [filter]);
   return (
-    <div className={style.container}>
-      <div className={style.search}>
-        <div className={style.input}>
-          <IoIosSearch size={30} />
-          <input
-            type="text"
-            placeholder="검색어를 입력하세요"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+    <div className={style.main}>
+      <div className={style.container}>
+        <div className={style.search}>
+          <div className={style.input}>
+            <IoIosSearch size={30} />
+            <input
+              type="text"
+              placeholder="검색어를 입력하세요"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
 
-        <select
-          name="country"
-          className={style.select}
-          onChange={(e) => setFilter(e.target.value)}
-        >
-          <option value="All">대륙을 선택하시오</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+          <select
+            name="country"
+            className={style.select}
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            <option value="All">대륙을 선택하시오</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+        <div className={style.countrys}>
+          {country.slice(first, last).map((a, i) => (
+            <Country
+              key={i}
+              id={a.id}
+              flag={a.flags.svg}
+              name={a.name}
+              population={a.population}
+              region={a.region}
+              capital={a.capital}
+            />
+          ))}
+        </div>
+        <Pagination
+          total={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
-      <div className={style.countrys}>
-        {country.slice(first, last).map((a, i) => (
-          <Country
-            key={i}
-            id={a.id}
-            flag={a.flags.svg}
-            name={a.name}
-            population={a.population}
-            region={a.region}
-            capital={a.capital}
-          />
-        ))}
-      </div>
-      <Pagination
-        total={pages}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
     </div>
   );
 };

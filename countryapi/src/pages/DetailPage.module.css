@@ -1,8 +1,16 @@
+.detail {
+  background-color: var(--background);
+  color: var(--color);
+  height: 100vh;
+}
 .container {
   width: 1400px;
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 50px;
+}
+.link {
+  width: 200px;
 }
 .button {
   border: 1px solid gainsboro;
@@ -14,6 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--color);
 }
 .button span {
   padding-left: 15px;

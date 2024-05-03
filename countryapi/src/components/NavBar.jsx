@@ -2,17 +2,22 @@ import style from "./NavBar.module.css";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import { Link } from "react-router-dom";
-const NavBar = () => {
+
+const NavBar = ({ theme, handleToggleTheme }) => {
   return (
-    <Link to={"/"}>
-      <div className={style.container}>
+    <div className={style.container}>
+      <Link to={"/"}>
         <h2 className={style.title}>Hello World</h2>
-        <div className={style.icon}>
+      </Link>
+
+      <div className={style.icon} onClick={handleToggleTheme}>
+        {theme === "dark" ? (
+          <MdOutlineLightMode size={30} />
+        ) : (
           <MdOutlineDarkMode size={30} />
-          {/* <MdOutlineLightMode /> */}
-        </div>
+        )}
       </div>
-    </Link>
+    </div>
   );
 };
 
